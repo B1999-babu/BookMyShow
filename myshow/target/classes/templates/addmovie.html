@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Home page</title>
+  </head>
+  <body>
+    <!-- navabar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <a class="navbar-brand">BookMyShow</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      
+      
+    </ul>
+    
+  </div>
+</nav>
+    
+    <!-- navabar -->
+    
+   
+   <form name="form1" method="post" th:action="@{/register}">
+  <table>
+    <div><Strong>Theatre Name</Strong>
+       <input class="form-control" style="width:90% " name="mallname" type="text" id="mallname"> 
+   </div><br>
+    <div><Strong>Movie Name</Strong>
+       <input class="form-control" style="width:90% " name="name" type="text" id="name"> 
+   </div><br>
+      <div><Strong>Show Date</Strong>
+       <input  class=" form-control" style="width:90% " name="date" type="date" id="date"> 
+    </div><br>
+      <div><Strong>Show 1</Strong>
+       <select class=" form-control" style="width:90% " name="time1"  id="time1" >
+       <option value="">--Select Show 1--</option>
+       <option>9-00AM to 12-00PM</option>
+       <option>12-30PM to 3-30PM</option>
+       </select> 
+   </div><br>
+      <div><Strong>Show 2</Strong>
+       <select class=" form-control" style="width:90% " name="time2"  id="time2"> 
+        <option value="">--Select Show 2--</option>
+       <option>9-00AM to 12-00PM</option>
+       <option>12-30PM to 3-30PM</option>
+    </select>
+    </div><br>
+    <div ><Strong>No of Tickets</Strong>
+      <input class=" form-control" style="width:90% " name="noOfTickets" type="text" id="noOfTickets"> 
+       </div></br>
+       <div ><Strong>Remaining Tickets</Strong>
+      <input class=" form-control" style="width:90% " name="remainingTickets" type="text" id="remainingTickets"> 
+       </div></br>
+      <div ><Strong>Ticket Price</Strong>
+      <input class=" form-control" style="width:90% " name="price" type="text" id="price"> 
+       </div></br>
+       <div align="center">
+        <input type="submit" class="btn btn-success" name="Submit" value="Submit">
+        <input type="reset" class="btn btn-primary" name="Reset" value="Reset">
+      </div> <br>
+     
+  </table>
+</form>
+
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" >
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Home page</title>
+  </head>
+  <body>
+    <!-- navabar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <a class="navbar-brand">BookMyShow</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="addmovie">Add Movies<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+     <!--  <li class="nav-item active">
+        <a class="nav-link" href="malldetails">theatre Details<span class="sr-only">(current)</span></a>
+      </li> -->
+      
+      
+    </ul>
+    
+  </div>
+</nav>
+    
+    <!-- navabar -->
+    
+    <div th:if=${session.msg}>
+   <div class="alert alert-primary" role="alert" th:text="${session.msg}"></div>
+   <th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+   </div>  	
+    
+    <div class="container">
+    
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">theatre Name</th>
+      <th scope="col">Movie Name</th>
+      <th scope="col">Show Date</th>
+      <th scope="col">Show-1</th>
+      <th scope="col">Show-2</th>
+      <th scope="col">Price</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="m1: ${movie1}">
+      <td th:text="${m1.id}"></td>
+       <td th:text="${m1.mallname}"></td>
+      <td th:text="${m1.name}"></td>
+      <td th:text="${m1.date}"></td>
+      <td th:text="${m1.time1}"></td>
+      <td th:text="${m1.time2}"></td>
+      <td th:text="${m1.price}"></td>
+      <td>
+      <a class="btn btn-sm btn-primary" th:href="@{/editmovie/{id}(id=${m1.id})}">Edit</a>
+      <a class="btn btn-sm btn-danger" th:href="@{/delete/{id}(id=${m1.id})}">Delete</a>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+    </div>
+    
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

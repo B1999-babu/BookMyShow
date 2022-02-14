@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Home page</title>
+  </head>
+  <body>
+    <!-- navabar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <a class="navbar-brand">BookMyShow</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      
+      
+    </ul>
+    
+  </div>
+</nav>
+    
+    <!-- navabar -->
+    
+   <form name="form1" method="post" th:action="@{/insertpayment}">
+  	
+<div class="padding">
+    <div class="row">
+        <div class="container-fluid d-flex justify-content-center">
+            <div class="col-sm-8 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-6"> <span>CREDIT/DEBIT CARD PAYMENT</span> </div>
+                            <div class="col-md-6 text-right" style="margin-top: -5px;">  </div>
+                        </div>
+                    </div>
+                    <div class="card-body" style="height: 350px">
+                        
+                        <div class="row">
+                        
+                            <div class="col-md-6">
+                                <div class="form-group"> <label  class="control-label">CARD NUMBER</label> <input id="cardnumber" name="cardnumber" type="text" class="input-lg form-control cc-exp" maxlength="16" min="15"  placeholder="•••• •••• •••• ••••"  required> </div>
+                            </div>
+                            <div class="col-md-6"  th:each="m2 :${book1}">
+                                <div class="form-group"> <label class="control-label">AMOUNT</label> <input id="amount"  th:value="${m2.totalprice}" readonly name="amount" type="tel" class="input-lg form-control cc-cvc"  placeholder="Amount" required> </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group"> <label class="control-label">CARD EXPIRY</label> <input id="expdate" name="expdate"  type="text"  maxlength="5"  class="input-lg form-control cc-exp" placeholder="•• / ••" required> </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group"> <label class="control-label">CARD CVC</label> <input id="cvc" name="cvc" type="text"  maxlength="3"  class="input-lg form-control cc-cvc"  placeholder="•••" required> </div>
+                            </div>
+                        </div>
+                        <div class="form-group"> <label class="control-label">CARD HOLDER NAME</label> <input type="text" placeholder="Card holder name" id="holdername" name="holdername" class="input-lg form-control"> </div>
+                        <div class="form-group"> <input value="MAKE PAYMENT" type="Submit" class="btn btn-success btn-lg form-control" style="font-size: .8rem;"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	
+</form>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
